@@ -29,17 +29,23 @@ def RLC(V0,L,C,R,T,dt):
     t=0
     w0 = 1/np.sqrt(L*C)
     V=[]
+    I0 = []
+    
     while t < T:
         n = V0/L*np.cos(w0*t) + Q/(L*C) - I*R/L
         I=I+n*dt
         Q=Q-I*dt
         t=t+dt
         V.append(Q/C)
-    plt.plot(V)
-    plt.grid()
-    plt.title('RLC Oscilloscope')
-    plt.xlabel('Time Scale (T/dt)')
-    plt.ylabel('Voltage (V)')
+        I0.append(I)
+    
+    fig, axs = plt.subplots(2)
+    fig.suptitle('Oscilloscope Display')
+    axs[0].plot(V)
+    axs[1].plot(I0)
+    axs.set_ylabel('Time Scale (T/dt)')
+    axs[0].set(ylabel="Voltage [V]")
+    axs[1].set(ylabel"Current [I]")
         
     
     

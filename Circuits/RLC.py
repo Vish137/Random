@@ -4,7 +4,7 @@ Created on Wed Sep 22 01:37:07 2021
 
 @author: Vish137
 
-Description: Solving for the voltage across a connected capaitor in an RLC loop via Euler method
+Description: Solving for the voltage and current across a connected capaitor in an RLC loop via Euler method
 
 ------
 INPUTS
@@ -19,7 +19,7 @@ dt - time-step
 -------
 OUTPUTS
 -------
-Plot: voltage against time
+Plot: voltage and current against time
 """
 import numpy as np
 import matplotlib.pyplot as plt

@@ -12,24 +12,27 @@ INPUTS
 x_lower - lower bound
 x_upper - upper bound
 args:
-    W (initial wealth), default=0
-    res (grid resolution), default=100
+    0. W (initial wealth), default=1
+    1. res (grid resolution), default=100
+    2. a (Bernoulli parameter), default=0
+    3. b (Bernoulli parameter), default=1
 """
 import numpy as np
 def log_utility(x_lower,x_upper,*args):
     if args:
-        if len(args)<2:
-            raise ValueError('You must specify W and res, in that order')
+        if len(args)<4:
+            raise ValueError('You must specify W, res, a, and b, in that order')
         x = np.linspace(x_lower,x_upper,args[1])
-        f = np.log(x+args[0])
+        f=args[3]*np.log( 1 + x/args[0]) + args[2]
         v=[]
         for _ in range(1,x_upper):
-            v.append(np.log( 1 + x[_]/args[0]))
+            v.append(args[3]*np.log( 1 + x[_]/args[0]) + args[2])
     else: 
         x = np.linspace(x_lower,x_upper,100)
-        f = np.log(x+0)
+        f=np.log(1 + x)
         v=[]
         for _ in range(x_lower,x_upper):
             v.append(np.log(1 + x))
+    plt.plot(x,f), plt.title('Log Utility'), plt.xlabel('Wealth'), plt.ylabel('Utility')
     return v
 

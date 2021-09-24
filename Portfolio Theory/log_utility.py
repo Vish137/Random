@@ -29,16 +29,13 @@ def log_utility(x_lower,x_upper,*args):
         if len(args)<4:
             raise ValueError('You must specify W, res, a, and b, in that order')
         x = np.linspace(x_lower,x_upper,args[1])
-        f=args[3]*np.log( 1 + x/args[0]) + args[2]
         v=[]
         for _ in range(x_lower,x_upper):
             v.append(args[3]*np.log( 1 + x[_]/args[0]) + args[2])
     else: 
         x = np.linspace(x_lower,x_upper,100)
-        f=np.log(1 + x)
         v=[]
         for _ in range(x_lower,x_upper):
             v.append(np.log(1 + x))
-    plt.plot(x,f), plt.title('Log Utility'), plt.xlabel('Wealth'), plt.ylabel('Utility')
     return v
 

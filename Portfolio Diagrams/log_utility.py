@@ -32,6 +32,6 @@ def log_utility(x_lower,x_upper,*args):
         f = np.log(x+0)
         v=[]
         for _ in range(x_lower,x_upper):
-            v[_] = np.log(x+0)
+            v.append(np.log(1 + x))
     return v
 

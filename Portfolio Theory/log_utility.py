@@ -21,7 +21,7 @@ args:
 OUTPUTS
 -------
 1. v - List of values for the utility function at each wealth
-2. .fig - Plot of utility against wealth
+
 """
 import numpy as np
 def log_utility(x_lower,x_upper,*args):

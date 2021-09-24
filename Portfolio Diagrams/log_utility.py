@@ -16,6 +16,12 @@ args:
     1. res (grid resolution), default=100
     2. a (Bernoulli parameter), default=0
     3. b (Bernoulli parameter), default=1
+
+-------
+OUTPUTS
+-------
+1. v - List of values for the utility function at each wealth
+2. .fig - Plot of utility against wealth
 """
 import numpy as np
 def log_utility(x_lower,x_upper,*args):

@@ -31,7 +31,7 @@ def log_utility(x_lower,x_upper,*args):
         x = np.linspace(x_lower,x_upper,args[1])
         f=args[3]*np.log( 1 + x/args[0]) + args[2]
         v=[]
-        for _ in range(1,x_upper):
+        for _ in range(x_lower,x_upper):
             v.append(args[3]*np.log( 1 + x[_]/args[0]) + args[2])
     else: 
         x = np.linspace(x_lower,x_upper,100)

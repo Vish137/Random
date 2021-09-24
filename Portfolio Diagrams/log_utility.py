@@ -16,8 +16,6 @@ args:
     res (grid resolution), default=100
 """
 import numpy as np
-import matplotlib.pyplot as plt
-
 def log_utility(x_lower,x_upper,*args):
     if args:
         if len(args)<2:

@@ -1,7 +1,4 @@
 import numpy as np
-import matplotlib.pyplot as plt
-from matplotlib.pyplot import figure
-from mpl_toolkits.mplot3d import Axes3D
 def CES(L, K, gamma,*args):
     #CES parameterisation
     if gamma==0:

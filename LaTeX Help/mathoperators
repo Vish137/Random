@@ -1,0 +1,8 @@
+\usepackage{amsmath,amssymb}
+\DeclareMathOperator{\E}{\mathbb{E}}
+\DeclareMathOperator{\E}{\mathbb{V}}
+\DeclareMathOperator{\R}{\mathbbP{R}}
+\DeclareMathOperator{\C}{\mathbbP{C}}
+\DeclareMathOperator{\Z}{\mathbbP{Z}}
+\DeclareMathOperator{\N}{\mathbbP{N}}
+\DeclareMathOperator{\Q}{\mathbbP{Q}}
